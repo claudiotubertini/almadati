@@ -1,0 +1,49 @@
+      
+<div class="container mt-3">
+      {% if docenti|length == 0 %}
+      <h5>{{ note }}</h5>
+    <div id=""  class="table-responsive small" style="visibility: hidden;">
+      {% else %}
+      <div  class="table-responsive small" style="visibility: visible;">
+        <h5  class="mt-3 mb-0">I docenti selezionati (solo le prime cinque righe)</h5>
+        <table class="table table-striped" id="nuovi_dati_docenti" >
+          <thead>
+            <tr>
+              <th scope="col">Università</th>
+              <th scope="col">Facoltà</th>
+              <th scope="col">SSD</th>
+              <th scope="col">Nome docente</th>
+              <th scope="col">Insegnamento</th>
+              <th scope="col">prof_id</th>
+              <th scope="col">insegnamento_id</th>
+            </tr>
+          </thead>
+          
+          <tbody >
+            {% for item in docenti %}
+            {% if loop.index <= 5 %}
+              <tr>
+                <td>{{ item.uni_cod }}</td>
+                <td>{{ item.facolta }}</td>
+                <td>{{ item.materia_ssd_cod }} </td>
+                <td> {{ item.insegnamento_prof }}</td>
+                <td> {{ item.materia_nome }}</td>
+                <td>{{ item.prof_id }}</td>
+                <td> {{ item.insegnamento_id }}</td>
+            </tr>
+              {% endif %}
+          {% endfor %}
+           
+          </tbody>
+        </table>
+      </div>
+    </div>
+ {% endif %}
+ </div>
+ <div class="row mt-3">
+  <p>Se la selezione è corretta puoi scaricare tutti i dati e inserire autonomamente i dati mancanti.</p>
+    <form method="get" action="/csv_docenti_router">
+        <button type="submit" class="btn btn-success">Scarica tutti i records</button>
+     </form>
+  </div>
+    

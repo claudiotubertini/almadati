@@ -1,0 +1,19 @@
+[Unit]
+Description=gunicorn daemon
+Requires=gunicorn.socket
+After=network.target
+
+[Service]
+User=claudio
+Group=www-data
+WorkingDirectory=/home/claudio/fasthtmx_2/fasthtmx
+ExecStart=/home/claudio/fasthtmx_2/bin/gunicorn \
+          --access-logfile - \
+          --log-config /home/claudio/fasthtmx_2/log.ini \
+          --workers 3 \
+          --worker-class uvicorn.workers.UvicornWorker \
+          --bind unix:/run/gunicorn.sock \
+          main:app
+
+[Install]
+WantedBy=multi-user.target

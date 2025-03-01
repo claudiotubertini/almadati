@@ -1,0 +1,70 @@
+
+{% extends "router_dashboard.html" %}
+{% block content %}
+
+
+  <div class="container mt-5 text-center" style="width: 50%;">
+    <h3 class="text-center">
+      Carica un file csv con l'elenco dei saggi inviati </h3>
+      <i class="bi bi-filetype-csv h2"></i>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Prima di effettuare il caricamento</h5>
+          <p class="card-text small">controllare che il file contenga esattamente
+            solo questi campi: <br>
+            nome, cognome, email, SSD, isbn, titolo, nomeSpedire, 
+            cognomeSpedire, indirizzo, cap, localita, provincia,
+            dataRichiesta. <br />
+          Controllare che l'ISBN sia di 13 cifre e senza trattini o spazi</p>
+        </div>
+      </div>
+      <p class="htmx-indicator">
+        <img src="/static/img/bars.svg" width="30"/> attendere prego...
+      </p>
+   <div class="form-group">
+  
+    <form 
+    id='form' 
+    hx-encoding='multipart/form-data'
+    hx-post="/router_uploadsaggi"
+    
+    hx-indicator=".htmx-indicator"
+    >
+  <div class="form-group text-center">
+    <div class="form-check form-check-inline ">
+      <i class="bi bi-database-exclamation h4"></i>
+      <input class="form-check-input" type="radio" id="inlineCheckbox1" name="inlineRadio" value="replace">
+      <label class="form-check-label" for="inlineCheckbox1">Cancella e ricarica i dati</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <i class="bi bi-database-add h4"></i>
+      <input class="form-check-input" type="radio" id="inlineCheckbox2" name="inlineRadio" value="append">
+      <label class="form-check-label" for="inlineCheckbox2">Aggiungi nuovi dati</label>
+    </div>
+    <div>
+      
+      <div class="input-group mb-3">
+         
+    <input class="form-control w-50" type="file" name="file" id="fileadozioni">
+    <span class="input-group-text">separatore</span>
+    <input type="text" class="form-control w-10" name="sep" placeholder=", ;">
+    <div class="invalid-feedback">
+      Inserire un separatore valido
+    </div>
+   </div>
+  </div>
+  </div>
+  
+  <button class="w-100 btn btn-lg btn-primary mt-3" type="submit" id="myBtn">Carica il file</button> 
+  
+        </form>
+        
+  </div>
+  </div>
+  
+        <div id="nuovi_saggi" class="container-fluid">
+        {% include 'partial_router_uploadsaggi.html' %}
+        </div>
+  
+
+{% endblock %}

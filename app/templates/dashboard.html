@@ -1,0 +1,402 @@
+{% extends "base.html" %}
+
+    
+{% block style %}
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        width: 100%;
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .btn-bd-primary {
+        --bd-violet-bg: #712cf9;
+        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+        --bs-btn-font-weight: 600;
+        --bs-btn-color: var(--bs-white);
+        --bs-btn-bg: var(--bd-violet-bg);
+        --bs-btn-border-color: var(--bd-violet-bg);
+        --bs-btn-hover-color: var(--bs-white);
+        --bs-btn-hover-bg: #6528e0;
+        --bs-btn-hover-border-color: #6528e0;
+        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+        --bs-btn-active-color: var(--bs-btn-hover-color);
+        --bs-btn-active-bg: #5a23c8;
+        --bs-btn-active-border-color: #5a23c8;
+      }
+
+      .bd-mode-toggle {
+        z-index: 1500;
+      }
+
+      .bd-mode-toggle .dropdown-menu .active .bi {
+        display: block !important;
+      }
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        width: 100%;
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .btn-bd-primary {
+        --bd-violet-bg: #712cf9;
+        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+        --bs-btn-font-weight: 600;
+        --bs-btn-color: var(--bs-white);
+        --bs-btn-bg: var(--bd-violet-bg);
+        --bs-btn-border-color: var(--bd-violet-bg);
+        --bs-btn-hover-color: var(--bs-white);
+        --bs-btn-hover-bg: #6528e0;
+        --bs-btn-hover-border-color: #6528e0;
+        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+        --bs-btn-active-color: var(--bs-btn-hover-color);
+        --bs-btn-active-bg: #5a23c8;
+        --bs-btn-active-border-color: #5a23c8;
+      }
+
+      .bd-mode-toggle {
+        z-index: 1500;
+      }
+
+      .bd-mode-toggle .dropdown-menu .active .bi {
+        display: block !important;
+      }
+      #sidebar {
+          width: 250px;
+          margin-right: 50px;
+          position: absolute;
+          top: 200;
+          right: 0;
+          padding: 0;
+          text-align: left;
+          border: 1px solid darkgray;
+          background-color: #f8f9fa;
+        }
+#sidebarcontents {
+  padding: 5px 0px 5px 0px;
+}
+    </style>
+    
+ {% endblock %}
+ 
+    {% block content %}
+   
+  
+    <div class="container">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Dashboard</h1>
+        </div>
+        <div class="row">
+          <div class="col-8">
+          
+            <div class="card mt-3" style="width: 90%;">
+              <div class="card-body text-start">
+                <h5 class="card-title text-center">Sommario</h5>
+                
+            <table class="table small">
+              <thead>
+                <tr>
+                  <th scope="col"></th>
+                  <th scope="col">Università</th>
+                  <th scope="col">ISBN</th>
+                  <th scope="col">SSD</th>
+                  <th scope="col">Docenti</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                <tr>
+                  <th scope="row">Quantità</th>
+                  <td>{{  data.1.uni_cod }}</td>
+                  <td>{{  data.1.isbn  }}</td>
+                  <td>{{  data.1.materia_ssd_cod }}</td>
+                  <td>{{  data.1.insegnamento_prof  }}</td>
+                </tr>
+                
+                <tr>
+                  <th scope="row">Valori</th>
+                  <td>{{ ', '.join(data.2.uni_cod) if data.2.uni_cod | length != 0 else "-" }}</td>
+                  <td>{{ data.2.isbn | replace("nan", "&mdash;") }}</td>
+                  <td>{% if data.2.materia_ssd_cod %}
+                    {{ data.2.materia_ssd_cod | join(", ") }}
+                    {% else %} Nessun dato {% endif %}</td>
+                  <td>{{ data.2.insegnamento_prof | replace("nan", "&mdash;") }}</td>
+                </tr>
+              
+              </tbody>
+            </table>
+            </div>
+            </div>
+
+          </div>
+          <div class="col-4">
+          <h6> 
+            Cerca nelle adozioni selezionate
+            <span class="htmx-indicator"> 
+              <img src="/static/img/bars.svg" width="30"/> attendere prego...
+            </span> 
+          </h6>
+              <form hx-encoding='multipart/form-data'
+              hx-post="/cerca_adozioni" 
+              hx-boost="true"
+              hx-trigger="submit"
+              hx-target="#cerca_adozioni"
+              hx-indicator=".htmx-indicator"
+              hx-target-error="#any-errors">
+                
+                <input class="form-control" type="text" 
+                    name="search" placeholder="Cerca ..." />
+                <button type="submit" class="btn btn-primary mt-2">Cerca</button>
+                </form>
+          </div>
+        </div>
+
+              <div id="cerca_adozioni" 
+              class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
+              style="font-size:x-small;">
+                {% include 'partial_cerca_adozioni.html' %}
+              </div>
+              <div id="any-errors" class="alert h6" role="alert"></div>
+
+        <div class="row">
+          <div class="col-6">
+            <div class="card shadow-sm">
+              <div class="card-header">
+                <h4 class="my-0 fw-normal">Docenti <span class="fs-6">solo le prime cinque righe</span></h4>
+              </div>
+              <div class="card-body">
+                <table class="table table-striped table-sm table-responsive">
+                  <thead>
+                    <tr>
+                      <th scope="col">ssd</th>
+                      <th scope="col">docente</th>
+                      <th scope="col">url</th>
+                      <th scope="col">università</th>
+                      <th scope="col">sede</th>
+                     
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for item in docenti %}
+                      {% if loop.index <= 5 %}
+                      <tr>
+
+                        <td>{{ item.materia_ssd_cod if item.materia_ssd_cod }} </td>
+                        <td> {{ item.insegnamento_prof if item.insegnamento_prof }}</td>
+                        <td style="word-break:break-all;"> {{ item.insegnamento_prof_www if item.insegnamento_prof_www }}</td>
+                        <td>{{ item.uni_cod if item.uni_cod }}</td>
+                        <td> {{ item.sede if item.sede }}</td>
+                        
+                    </tr>
+                      {% endif %}
+                  {% endfor %}
+                  </tbody>
+                </table>
+                
+                <form method="get" action="/csv_docenti">
+                  <button type="submit" class="btn btn-primary">Docenti</button>
+               </form>
+              </div>
+             
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="card shadow-sm">
+              <div class="card-header">
+                <h4 class="my-0 fw-normal">Numero studenti</h4>
+                <p>Il numero degli studenti è la somma degli studenti iscritti al primo anno di ogni corso di laurea 
+                  in cui il testo è adottato. Sono riportate <span class="fs-6">solo le prime cinque righe</span></p>
+              </div>
+              <div class="card-body">
+                
+                <table class="table table-striped table-sm">
+                  <thead>
+                    <tr>
+                      <th scope="col">isbn</th>
+                      <th scope="col">titolo</th>
+                      <th scope="col">autore</th>
+                      <th scope="col">editore</th>
+                      <th scope="col">numero studenti</th>
+                      
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for item in studenti %}
+                      {% if loop.index <= 5 %}
+                      <tr>
+                        <td>{{ item.isbn if item.isbn }} </td>
+                        
+                        <td> {{ item.titolo if item.titolo }}</td>
+                        <td>{{ item.autore if item.autore }}</td>
+                        <td> {{ item.editore if item.editore }}</td>
+                        <td> {{ item.studenti if item.studenti }}</td>
+                    </tr>
+                      {% endif %}
+                  {% endfor %}
+                  </tbody>
+                </table>
+               
+                <form method="get" action="/csv_studenti">
+                  <button type="submit" class="btn btn-primary">Studenti</button>
+               </form>
+              </div>
+            </div>
+          </div>
+      </div>
+        <div class="row">
+        <div class="col-12">
+          {% if adozioni|length == 0 %}
+          <div class="card " >
+            <div id="nuovi_dati"  class="table-responsive small" style="visibility: hidden;">
+            {% else %}
+            <div id="nuovi_dati"  class="table-responsive small" style="visibility: visible;">
+              <h4 class="my-2 fw-normal">Le adozioni</h4>
+              <p>Le adozioni si riferiscono ai dati selezionati nei passi precedenti. Vengono visualizzate solo
+                <span class="fs-6">le prime dieci righe</span></p>
+              <table class="table table-striped table-sm">
+                <thead>
+                  <tr>
+                    <th scope="col">anno</th>
+                    <th scope="col">università</th>
+                    <th scope="col">laurea</th>
+                    <th scope="col">insegnamento</th>
+                    <th scope="col">ssd</th>
+                    <th scope="col">docente</th>
+                    <th scope="col">isbn</th>
+                    <th scope="col">titolo</th>
+                    <th scope="col">editore</th>
+                    <th scope="col">studenti</th>
+                  </tr>
+                </thead>
+                
+                <tbody>
+                  {% for item in adozioni %}
+                    {% if loop.index <= 10 %}
+                    <tr>
+                      <td>{{ item.a_a if item.a_a }}</td>
+                      <td>{{ item.uni_cod if item.uni_cod }}</td>
+                      <td>{{ item.laurea_nome if item.laurea_nome }}</td>
+                      <td>{{ item.materia_nome if item.materia_nome }}</td>
+                      <td>{{ item.materia_ssd_cod if item.materia_ssd_cod }} </td>
+                      <td> {{ item.insegnamento_prof if item.insegnamento_prof }}</td>
+                      <td> {{ item.isbn if item.isbn }}</td>
+                      <td> {{ item.titolo if item.titolo }}</td>
+                      <td> {{ item.editore if item.editore }}</td>
+                      <td> {{ item.laurea_matricole if item.laurea_matricole }}</td>
+                  </tr>
+                    {% endif %}
+                {% endfor %}
+                 
+                </tbody>
+              </table>
+              <form method="get" action="/csv_adozioni">
+                <button type="submit" class="btn btn-primary">Scarica tutti i records</button>
+             </form>
+            </div>
+       {% endif %}
+           </div>
+          </div>
+        </div>
+        </div>
+
+       
+     
+      
+      
+
+    {% endblock %}
+ 

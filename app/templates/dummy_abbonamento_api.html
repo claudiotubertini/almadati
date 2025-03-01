@@ -1,0 +1,31 @@
+
+{% extends "base.html" %}
+{% block content %}
+<div hx-ext="response-targets">
+<div class="container">
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+  <div class="card shadow-sm">
+    <div class="card-body">
+      <h5 class="my-2">Il tuo account non è autorizzato ad accedere direttamente ad Almalibri API.</h5>
+      <h5>Puoi continuare il lavoro utilizzando il menù a sinistra oppure caricando un file alla pagina
+        <a href="/uploadfile">Carica file</a>. </h5>
+        <h5>Per maggiori informazioni puoi consultare la pagina 
+          degli <a href="https://esempi.almalibri.it/abbonamenti">abbonamenti</a>.</h5>
+    </div>
+    </div>
+    <div class="col-md-2"></div>
+ 
+   
+     
+    </div>
+    <div id="any-errors" class="h6 mt-3" role="alert"></div>
+
+
+
+
+
+</div>
+</div>
+{% endblock %}
