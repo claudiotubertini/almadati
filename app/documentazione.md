@@ -4,7 +4,7 @@
 
 ### Introduzione
 
-    [![](https://mermaid.ink/img/pako:eNptUstOwzAQ_BXLp1Zq-IAckKK6hSIKlcIJp4cl3jQWfkSOIwRt_x3XbqBU7MmzM_v2ntZWIM1po-xH3YLz5IVVhgSb70FpEODlkWTZ7aEQ9ktaIw-E8SIwSr45SYrNKsmvbSkVks7Zzkm7TZJi8hN3I_30lJXME8UiWExKVBirTJN_Ef33nNkajZfbCNecQd--WXDinPjc2vYy6I5L0-POgL6IvBSs-OOplX-YB74Gj07i1Whlyf6o53ExG2d1rI8HsuQN5A1kYZXqPXaYDT06Mvaf4pYxydPvtOclJFFazPPkasiRpTOq0WmQIpxtf-Iq6lvUWNE8PAU2MChf0cocgxQGb8tPU9PcuwFn1Nlh145g6MJ5kUnYOdCjswPzam2ADag-YBTSW7dO3yT-luM3aHWsZA?type=png)](https://mermaid.live/edit#pako:eNptUstOwzAQ_BXLp1Zq-IAckKK6hSIKlcIJp4cl3jQWfkSOIwRt_x3XbqBU7MmzM_v2ntZWIM1po-xH3YLz5IVVhgSb70FpEODlkWTZ7aEQ9ktaIw-E8SIwSr45SYrNKsmvbSkVks7Zzkm7TZJi8hN3I_30lJXME8UiWExKVBirTJN_Ef33nNkajZfbCNecQd--WXDinPjc2vYy6I5L0-POgL6IvBSs-OOplX-YB74Gj07i1Whlyf6o53ExG2d1rI8HsuQN5A1kYZXqPXaYDT06Mvaf4pYxydPvtOclJFFazPPkasiRpTOq0WmQIpxtf-Iq6lvUWNE8PAU2MChf0cocgxQGb8tPU9PcuwFn1Nlh145g6MJ5kUnYOdCjswPzam2ADag-YBTSW7dO3yT-luM3aHWsZA)
+![Diagramma del sito AlmaDati](https://almalibri-staticfiles.fra1.digitaloceanspaces.com/static/images/mermaid_flowchart.jpg)
 
 0. Per accedere all'applicazione è necessario scrivere a <info@almalibri.it>, che provvederà alla creazione dell'account.
 
@@ -68,7 +68,7 @@ Il menù "promozione" è pensato per gestire i dati relativi ai docenti, alle co
 1. Selezionare i docenti da almalibri con l'ssd desiderato (da "Scarica da almalibri")
 2. Nella pagina "Docenti" compariranno i docenti con l'ssd desiderato ma ripetuti se hanno più insegnamenti
 3. Se si desidera un file csv con i nomi dei docenti e con la pagina url personale, per le successive ricerche di dati promozionali, conviene andare su "Dashboard" e scaricare il file csv dal pannello docenti
-4. In alternativa si può cliccare su "Tutti i docenti" ed effettuare la selezione come indicato nella figuta 1 ![Selezione docenti](https://almalibri-staticfiles.fra1.digitaloceanspaces.com/static/images/selezione_docenti.png)
+4. In alternativa si può cliccare su "Tutti i docenti" ed effettuare la selezione come indicato nella figura 1 ![Selezione docenti](https://almalibri-staticfiles.fra1.digitaloceanspaces.com/static/images/selezione_docenti.png)
 
 ### Selezionare gli insegnamenti
 
