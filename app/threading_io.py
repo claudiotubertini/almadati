@@ -25,8 +25,8 @@ class Alma_api:
         session = self.get_session()
         r = session.get(self.API_UNI)
         unicontent = json.loads(r.content)
-        #unis = [j['uni_cod'] for j in [x for x in unicontent['data'] if x['max']>=int(a_a)]]
-        unis = [j['uni_cod'] for j in [x for x in unicontent['data']]]
+        unis = [j['uni_cod'] for j in [x for x in unicontent['data'] if x['max']>=int(a_a)]]
+        #unis = [j['uni_cod'] for j in [x for x in unicontent['data']]]
         return unis
 
     def download_deep_site(self, s, txt):

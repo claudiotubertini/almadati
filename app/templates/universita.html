@@ -26,6 +26,7 @@
                   <tr>
                     <th scope="col">uni_cod</th>
                     <th scope="col">università</th>
+                    <th scope="col">ultimo anno</th>
                     <th scope="col">selezione</th>
                   </tr>
                 </thead>
@@ -36,6 +37,7 @@
                     <tr>
                       <td>{{ item.uni_cod }}</td>
                       <td>{{ item.uni_nome }}</td>
+                      <td>{{ item.max }}</td>
                       <td><input type="checkbox" name={{ item.uni_cod }}></td>
                   </tr>
                     
