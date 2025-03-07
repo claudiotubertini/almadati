@@ -573,9 +573,11 @@ async def form_docenti(request: Request, db: str = Depends(auth.get_tenant_hash)
             df = df2.drop_duplicates(subset=['prof_id', 'insegnamento_id'])
             df.to_sql('tuttidocenti_res', conn, if_exists=inlineRadio, index=False)
             message = f"Selezionati solo i docenti con adozioni"
-        else:
+        elif inlineCheck == '2':
             df.to_sql('tuttidocenti_res', conn, if_exists=inlineRadio, index=False)
             message = f"Selezionati i docenti con {filtered_params}"
+        else:
+            message = "Selezionati solo i docenti già presenti nelle adozioni."
         myalma.update_msg(conn, message)
         df.to_csv(os.path.join(p, f'{db}tuttidocenti_res.csv'), sep=',', index=False)
         docenti = df.to_dict(orient='records')
