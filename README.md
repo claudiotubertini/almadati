@@ -8,7 +8,7 @@
    - user: demo@gmail.com (tutti gli user devono avere la forma di una mail)
    - password: demo20241128  
 Il menu `Promozione -> Utenti` consente di modificare l'account demo, inserire altri utenti, ecc.
-5. L'applicazione è basata su FastAPI. Si può quindi consultare proficuamente il tutorial di [FastAPI](https://fastapi.tiangolo.com/)
+5. L'applicazione è basata su FastAPI. Si può quindi consultare proficuamente il tutorial di [FastAPI](https://fastapi.tiangolo.com/). L'installazione più semplice è in locale dove potrà essere consultata all'URL `http://localhost:8000`. In alternativa viene fornita anche una versione containerizzata che fa uso del server [traefik](https://traefik.io/traefik/). Si veda per questo il tutorial dello sviluppatore di [FastAPI](https://traefik.io/resources/traefik-fastapi-kuberrnetes-ai-ml/). Infine abbiamo inserito anche un esempio di installazione su server Linux con systemd e Nginx. I tutorial a questo proposito sono numerosi. 
 
 ## Guida rapida all'uso
 
