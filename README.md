@@ -7,7 +7,7 @@
 4. L'account demo è il seguente:
    - user: demo@gmail.com (tutti gli user devono avere la forma di una mail)
    - password: demo20241128  
-   Il menu `Promozione -> Utenti` consente di modificare l'account demo, inserire altri utenti, ecc.
+Il menu `Promozione -> Utenti` consente di modificare l'account demo, inserire altri utenti, ecc.
 5. L'applicazione è basata su FastAPI. Si può quindi consultare proficuamente il tutorial di [FastAPI](https://fastapi.tiangolo.com/)
 
 ## Guida rapida all'uso
