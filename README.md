@@ -6,7 +6,7 @@
 3. Inserire i dati necessari nel file .env (la chiave per open_ai; se si preferisce un diverso modello è necessario modificare anche il file mylangchain.py)
 4. L'account demo è il seguente:
    - user: demo@gmail.com (tutti gli user devono avere la forma di una mail)
-   - password: demo20241128
+   - password: demo20241128  
    Il menu `Promozione -> Utenti` consente di modificare l'account demo, inserire altri utenti, ecc.
 5. L'applicazione è basata su FastAPI. Si può quindi consultare proficuamente il tutorial di [FastAPI](https://fastapi.tiangolo.com/)
 
