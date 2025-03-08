@@ -1,6 +1,12 @@
 # Guida ad AlmaDati
 
-## Guida rapida
+## Guida all'installazione
+== In preparazione ==
+1. Creare un ambiente virtuale
+2. Installare i requirements.txt
+3. Inserire i dati necessari nel file .env
+
+## Guida rapida all'uso
 
 ### Introduzione
 
