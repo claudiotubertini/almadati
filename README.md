@@ -12,7 +12,7 @@
 AlmaDati è divisa in due menu principali: uno per l'analisi delle "adozioni", l'altro per la gestione dei docenti, denominato "promozione".
 L'applicazione è pensata per effettuare query sulle adozioni universitarie che seguono lo schema di [Almalibri](https://www.almalibri.it/guida/adozioni). I file con le adozioni possono provenire tanto dalla consultazione via API ad Almalibri, tanto dal download di file csv dallo stesso sito web, quanto da una rielaborazione personale di dati ottenuti in altro modo. L'importante è che il file segua il tracciato record [qui indicato](https://www.almalibri.it/guida/adozioni).  
 
-2. Il menù "adozioni" consente di gestire i dati adozionali individuando i docenti, i libri di testo, gli insegnamenti e il numero di studenti presunto per ogni titolo adottato. Il menù "promozione" gestisce i docenti, tiene memoria delle copie saggio inviate, è utile alla gesitone degli indirizzari. In entrambi i menù si parte dai dati selezionati da Almalibri (o in altro modo come indicato al punto 1), si procede per selezioni successive o per inserimento di altre informazioni, per arrivare alla dashboard che ricapitola i dati gestiti.
+2. Il menù "adozioni" consente di gestire i dati adozionali individuando i docenti, i libri di testo, gli insegnamenti e il numero di studenti presunto per ogni titolo adottato. Il menù "promozione" gestisce i docenti, tiene memoria delle copie saggio inviate, è utile alla gestione degli indirizzari. In entrambi i menù si parte dai dati selezionati da Almalibri (o in altro modo come indicato al punto 1), si procede per selezioni successive o per inserimento di altre informazioni, per arrivare alla dashboard che ricapitola i dati gestiti.
 
 3. Nella colonna di sinistra, nel menù Funzioni, sotto ai diversi link, si trova la tabella "Selezioni effettuate" che consente di tenere sotto controllo le diverse query e i parametri utilizzati (ad esempio prof_id, università, ssd). È sempre possibile scaricare i dati elaborati oppure eliminarli ed eventualmente ricominciare da capo il processo di selezione.
 
@@ -99,4 +99,7 @@ Elenco dei link contenenti l'aggiornamento semestrale dei docenti presenti su [A
 I Semestre A.A 2024/25  
 [docenti_2024_I_sem.csv](https://almalibri-backup.fra1.digitaloceanspaces.com/public/docenti/docenti_2024_I_sem.csv)  
 II Semestre A.A 2024/25  
-In preparazione
+[docenti_2024_II_sem.csv](https://almalibri-backup.fra1.digitaloceanspaces.com/public/docenti/docenti_2024_II_sem.csv)  
+
+I Semestre A.A 2025/26
+In preparazione  
