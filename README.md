@@ -1,6 +1,16 @@
 # Guida ad AlmaDati
 
-## Guida rapida
+## Guida all'installazione
+1. Creare un ambiente virtuale
+2. Installare i requirements.txt
+3. Inserire i dati necessari nel file .env (la chiave per open_ai; se si preferisce un diverso modello è necessario modificare anche il file mylangchain.py)
+4. L'account demo è il seguente:
+   - user: demo@gmail.com (tutti gli user devono avere la forma di una mail)
+   - password: demo20241128  
+Il menu `Promozione -> Utenti` consente di modificare l'account demo, inserire altri utenti, ecc.
+5. L'applicazione è basata su FastAPI. Si può quindi consultare proficuamente il tutorial di [FastAPI](https://fastapi.tiangolo.com/). L'installazione più semplice è in locale dove potrà essere consultata all'URL `http://localhost:8000`. In alternativa viene fornita anche una versione containerizzata che fa uso del server [traefik](https://traefik.io/traefik/). Si veda per questo il tutorial dello sviluppatore di [FastAPI](https://traefik.io/resources/traefik-fastapi-kuberrnetes-ai-ml/). Infine abbiamo inserito anche un esempio di installazione su server Linux con systemd e Nginx. I tutorial a questo proposito sono numerosi. 
+
+## Guida rapida all'uso
 
 ### Introduzione
 
@@ -99,7 +109,4 @@ Elenco dei link contenenti l'aggiornamento semestrale dei docenti presenti su [A
 I Semestre A.A 2024/25  
 [docenti_2024_I_sem.csv](https://almalibri-backup.fra1.digitaloceanspaces.com/public/docenti/docenti_2024_I_sem.csv)  
 II Semestre A.A 2024/25  
-[docenti_2024_II_sem.csv](https://almalibri-backup.fra1.digitaloceanspaces.com/public/docenti/docenti_2024_II_sem.csv)  
-
-I Semestre A.A 2025/26
-In preparazione  
+In preparazione
