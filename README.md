@@ -1,14 +1,15 @@
 # Guida ad AlmaDati
 
 ## Guida all'installazione
+
 1. Creare un ambiente virtuale
 2. Installare i requirements.txt
 3. Inserire i dati necessari nel file .env (la chiave per open_ai; se si preferisce un diverso modello è necessario modificare anche il file mylangchain.py)
 4. L'account demo è il seguente:
-   - user: demo@gmail.com (tutti gli user devono avere la forma di una mail)
+   - user: <demo@gmail.com> (tutti gli user devono avere la forma di una mail)
    - password: demo20241128  
 Il menu `Promozione -> Utenti` consente di modificare l'account demo, inserire altri utenti, ecc.
-5. L'applicazione è basata su FastAPI. Si può quindi consultare proficuamente il tutorial di [FastAPI](https://fastapi.tiangolo.com/). L'installazione più semplice è in locale dove potrà essere consultata all'URL `http://localhost:8000`. In alternativa viene fornita anche una versione containerizzata che fa uso del server [traefik](https://traefik.io/traefik/). Si veda per questo il tutorial dello sviluppatore di [FastAPI](https://traefik.io/resources/traefik-fastapi-kuberrnetes-ai-ml/). Infine abbiamo inserito anche un esempio di installazione su server Linux con systemd e Nginx. I tutorial a questo proposito sono numerosi. 
+5. L'applicazione è basata su FastAPI. Si può quindi consultare proficuamente il tutorial di [FastAPI](https://fastapi.tiangolo.com/). L'installazione più semplice è in locale dove potrà essere consultata all'URL `http://localhost:8000`. In alternativa viene fornita anche una versione containerizzata che fa uso del server [traefik](https://traefik.io/traefik/). Si veda per questo il tutorial dello sviluppatore di [FastAPI](https://traefik.io/resources/traefik-fastapi-kuberrnetes-ai-ml/). Infine abbiamo inserito anche un esempio di installazione su server Linux con systemd e Nginx. I tutorial a questo proposito sono numerosi.  
 
 ## Guida rapida all'uso
 
@@ -100,6 +101,22 @@ Per iniziare una nuova ricerca/selezione, si può cliccare su "Cancella le adozi
 
 Il prof_id è un identificativo che viene assegnato da Almalibri a ciascun docente sulla base del nome e cognome e dell'università. Non è un identificativo univoco. Lo stesso docente può insegnare in più università e avere più prof_id. Se un docente nel corso degli anni cambia università, il prof_id cambierà. Per questo motivo l'individuazione dei docenti e dei corsi è sempre basata su un insieme di dati.  
 L'unico momento in cui si fa uso del prof_id come identificativo univoco è quando viene caricato, nel menu "promozione", un file con i dati "personali" dei docenti a cui si sono inviati saggi. In questo caso l'identità dei docenti sarà stata probabilmente controllata dall'utente.  
+
+## Variabili d'ambiente
+
+Per l'installazione dell'applicazione è necessario modificare il file `.env` che contiene le variabili d'ambiente. Le variabili sono le seguenti:
+
+```bash
+cp .env.example .env
+```  
+
+Dopo aver copiato il file `.env.example` in `.env`, è necessario modificare il file `.env` con un editor di testo.  
+
+```bash
+OPENAI_API_KEY_api_key = 
+# openssl rand -base64 48 | tr -d '\n' | cut -c1-64
+SETTINGS_AUTH_SECRET_KEY =
+```
 
 ## Aggiornamento docenti
 
