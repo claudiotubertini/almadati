@@ -1,5 +1,6 @@
 .env
 .venv
+read_from_fastapi_to_flet.md
 *.log
 *.pyc
 __pycache__/
