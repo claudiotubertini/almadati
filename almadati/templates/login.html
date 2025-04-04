@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+
+
+{% block content %}
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-6"></div>
+    <div class="col-md-4">
+    <h1 class="text-center">Login</h1>
+    <p class="text-center">Per favore, inserisci le credenziali per accedere al tuo account.</p>
+    <form action="/login" method="post">
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Email</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" name="username" aria-describedby="emailHelp" required>
+        <div id="emailHelp" class="form-text">La tua mail non sarà mai condivisa con altre società</div>
+      </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" id="password" name="password">
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+     {% if res %}
+      <span class="alert alert-danger text-center">{{ res | join(", ") }}</span>
+{% endif %}
+</div>
+    <div class="col-md-2"></div>
+</div>
+<div class="row">
+  <div class="col-md-6"></div>
+  <div class="col-md-4 mt-5">
+    <p class="text-center">Questa applicazione è liberamente utilizzabile e modificabile da chiunque. Gli abbonati alla
+      banca dati Almalibri hanno la possibilità di inserire e gestire autonomamente i propri dati.
+      Per maggiori informazioni si può scrivere a info@almalibri.it</p>
+  </div>
+  <div class="col-md-2"></div>
+</div>
+{% endblock %}

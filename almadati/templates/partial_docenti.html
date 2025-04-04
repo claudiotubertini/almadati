@@ -1,0 +1,45 @@
+
+
+      {% if items|length == 0 %}
+      <div id=""  class="table-responsive small" style="visibility: hidden;">
+
+      {% else %}
+      <div id=""  class="table-responsive small" style="visibility: visible;">
+        <h3>I docenti</h3>
+        <h5>{{ message_tpl }}</h5>
+        <h6>Questi dati verranno conservati per le successive analisi. Potete proseguire scegliendo le <a href="/universita">università</a>,
+          il <a href="/adozioni">settore disciplinare</a>, l'<a href="/insegnamenti">insegnamento</a>.</h6>
+        <table class="table table-striped table-sm">
+          <thead>
+            <tr>
+              <td>Università</td>
+            <td>Sede</td>
+            <td>Facoltà/Dipartimento</td>
+            <td>SSD</td>
+            <td>Nome</td>
+            <td>prof_id</td>
+            </tr>
+          </thead>
+          
+          <tbody>
+            {% for item in items %}
+              {% if loop.index <= 5 %}
+              <tr>
+                <td>{{ item.uni_cod }}</td>
+                <td>{{ item.sede }}</td>
+                <td>{{ item.facolta }}</td>
+                <td>{{ item.materia_ssd_cod }} </td>
+                <td> {{ item.insegnamento_prof}}</td>
+                <td> {{ item.prof_id}}</td>
+            </tr>
+              {% endif %}
+          {% endfor %}
+           
+          </tbody>
+        </table>
+      </div>
+      
+ {% endif %}
+ 
+ 
+

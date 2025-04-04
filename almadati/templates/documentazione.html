@@ -1,0 +1,301 @@
+{% extends "base.html" %}
+
+    
+{% block style %}
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        width: 100%;
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .btn-bd-primary {
+        --bd-violet-bg: #712cf9;
+        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+        --bs-btn-font-weight: 600;
+        --bs-btn-color: var(--bs-white);
+        --bs-btn-bg: var(--bd-violet-bg);
+        --bs-btn-border-color: var(--bd-violet-bg);
+        --bs-btn-hover-color: var(--bs-white);
+        --bs-btn-hover-bg: #6528e0;
+        --bs-btn-hover-border-color: #6528e0;
+        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+        --bs-btn-active-color: var(--bs-btn-hover-color);
+        --bs-btn-active-bg: #5a23c8;
+        --bs-btn-active-border-color: #5a23c8;
+      }
+
+      .bd-mode-toggle {
+        z-index: 1500;
+      }
+
+      .bd-mode-toggle .dropdown-menu .active .bi {
+        display: block !important;
+      }
+    </style>
+    <link href="https://restful.almalibri.it/static/css/dashboard.css" rel="stylesheet">
+ {% endblock %}
+ 
+ {% block content %}
+    
+    <div class="container mt-5">
+      <h1 id="guida-ad-almadati-pagina-in-preparazione">Guida ad AlmaDati</h1>
+        <p>========Pagina in preparazione=========</p>
+        <h2 id="guida-rapida">Guida rapida</h2>
+        <h3 id="introduzione">Introduzione</h3>
+          <img class="mb-3 img-fluid shadow"
+        src="https://almalibri-staticfiles.fra1.digitaloceanspaces.com/static/images/mermaid_flowchart.jpg"
+        alt="Flowchart dei processi di almadati" width="700" />
+        <p>Figura 1. Diagramma di flusso dei processi realizzabili con Almadati.</p>
+        <ol start="0" type="1">
+        <li><p>Per accedere all’applicazione è necessario scrivere a <a
+        href="mailto:info@almalibri.it" class="email">info@almalibri.it</a>, che
+        provvederà alla creazione dell’account.</p></li>
+        <li><p>Almalibri, l’applicazione “genitore” su cui si appoggia AlmaDati
+        (l’app di cui state leggendo la documentazione), consente di estrarre
+        sia le adozioni che l’offerta formativa attraverso un apposito <a
+        href="https://www.almalibri.it/guida/adozioni">web form</a>. AlmaDati è
+        una piccola applicazione che consente di selezionare o visualizzare, più
+        o meno facilmente, le principali informazioni contenute in
+        Almalibri.<br />
+        AlmaDati è divisa in due menu principali: uno per l’analisi delle
+        “adozioni”, l’altro per la gestione dei docenti, denominato
+        “promozione”. L’applicazione è pensata per effettuare query sulle
+        adozioni universitarie che seguono lo schema di <a
+        href="https://www.almalibri.it/guida/adozioni">Almalibri</a>. I file con
+        le adozioni possono provenire tanto dalla consultazione via API ad
+        Almalibri, tanto dal download di file csv dallo stesso sito web, quanto
+        da una rielaborazione personale di dati ottenuti in altro modo.
+        L’importante è che il file segua il tracciato record <a
+        href="https://www.almalibri.it/guida/adozioni">qui
+        indicato</a>.</p></li>
+        <li><p>Il menù “adozioni” consente di gestire i dati adozionali
+        individuando i docenti, i libri di testo, gli insegnamenti e il numero
+        di studenti presunto per ogni titolo adottato. Il menù “promozione”
+        gestisce i docenti, tiene memoria delle copie saggio inviate, è utile
+        alla gesitone degli indirizzari. In entrambi i menù si parte dai dati
+        selezionati da Almalibri (o in altro modo come indicato al punto 1), si
+        procede per selezioni successive o per inserimento di altre
+        informazioni, per arrivare alla dashboard che ricapitola i dati
+        gestiti.</p></li>
+        <li><p>Nella colonna di sinistra, nel menù Funzioni, sotto ai diversi
+        link, si trova la tabella “Selezioni effettuate” che consente di tenere
+        sotto controllo le diverse query e i parametri utilizzati (ad esempio
+        prof_id, università, ssd). È sempre possibile scaricare i dati elaborati
+        oppure eliminarli ed eventualmente ricominciare da capo il processo di
+        selezione.</p></li>
+        <li><p>Gli utenti che hanno accesso all’applicazione devono essere
+        collegati al nome di un’azienda (un <em>tenant</em>). Per ogni azienda
+        possono esserci molti utenti ma un utente non può appartenere a più
+        aziende. I dati sono condivisi per singola azienda. Cioè se un utente
+        scarica dei dati e decide di cancellarne una parte, cancella i dati
+        anche per gli altri utenti che appartengono alla stessa azienda. In
+        altre parole ogni azienda (<em>tenant</em>) individua un gruppo di
+        lavoro che condivide gli stessi dati.</p></li>
+        </ol>
+        <h3 id="le-adozioni">Le adozioni</h3>
+        <p>I dati caricati dalla pagina <a
+        href="https://almadati.it/form">Carica dati</a> provengono direttamente
+        dalle API di Almalibri. Se invece si possiede già un file, scaricato in
+        precedenza, eventualmente corretto o modificato, andrà inserito nella
+        pagina <a href="https://almadati.it/uploadfile">Carica file</a>. Il
+        processo da tenere a mente è che i dati, dopo essere stati caricati,
+        vengono sottoposti a una serie di selezioni il cui risultato compare
+        infine nella pagina <a href="https://almadati.it">Dashboard</a>.</p>
+        <p>La pagina <a href="https://almadati.it/universita">Università</a>
+        accede ad Almalibri e scarica l’elenco delle università disponibili.
+        Selezionando una o più università, si selezionano le adozioni tra quelle
+        precedentemente scaricate da <a href="https://almadati.it/form">Carica
+        dati</a>, appartenenti appunte alle università scelte.</p>
+        <p>La pagina <a href="https://almadati.it/libri">Libri</a> mostra
+        l’elenco dei libri adottati contenuti nella selezione già effettuata e
+        consente di selezionare uno o più ISBN, se si fosse interessati solo ad
+        alcuni titoli invece che ad altri. Il dato selezionato è l’“ISBN”.</p>
+        <p>La pagina <a href="https://almadati.it/docenti">Docenti</a> mostra
+        anch’essa il semplice elenco dei docenti contenuti nella precedente
+        selezione, mostrando alcuni dati rilevanti per l’individuazione del
+        nome. Si può procedere a un’ulteriore selezione. Il dato selezionato è
+        il “prof_id”.</p>
+        <p>La pagina <a href="https://almadati.it/adozioni">SSD</a> mostra
+        l’elenco delle adozioni (ovvero l’associazione insegnamento - ISBN) e
+        compie una selezione solo sull’SSD. È sufficiente selezionare anche una
+        sola adozione appartenente all’SSD che si vuole analizzare.</p>
+        <p>La pagina <a href="https://almadati.it/nuove_adozioni">Nuove
+        adozioni</a> mette a confronto le adozioni dei singoli docenti, per ogni
+        corso di laurea (a cui fanno riferimento il numero degli studenti
+        iscritti) e mostra l’elenco delle nuove adozioni, ovvero quelle che per
+        quel docente, in quel corso di laurea, non erano presenti l’anno
+        precedente.</p>
+        <p>La pagina <a href="https://almadati.it/insegnamenti">Insegnamenti</a>
+        mostra l’elenco degli insegnamenti e procede alla selezione sulla base
+        del prof_id, cioè del docente.</p>
+        <p>Infine la pagina <a href="https://almadati.it">Dashboard</a> riassume
+        i dati ottenuti riportando l’elenco dei docenti, il numero di studenti
+        che potrebbero acquistare il volume e l’elenco delle adozioni. I dati
+        sono tutti scaricabili in formato csv.</p>
+        <h3 id="il-menù-funzioni">Il menù Funzioni</h3>
+        <p>A sinistra, in ogni pagina, si trova il menù “Funzioni”. È suddiviso
+        in tre parti: le funzioni di gestione dati, la gestione del database del
+        gruppo di lavoro a cui appartiene l’utente, le “Selezioni effettuate”,
+        ovvero una serie di messaggi che costituiscono un promemoria delle
+        selezioni effettuate.<br />
+        Si è già detto delle funzioni nel paragrafo precedente.</p>
+        <ol type="1">
+        <li>“Cancella le adozioni selezionate” cancella le tabelle con i
+        messaggi (le “Selezioni effettuate”) e quella con le selezioni delle
+        adozioni;<br />
+        </li>
+        <li>“Cancella i dati del menù adozioni” cancella, oltre alle tabelle
+        precedenti, anche quella che riporta i dati scaricati da
+        Almalibri;<br />
+        </li>
+        <li>“Cancella tutti i dati e crea backup” crea prima una copia del
+        database e cancella, oltre a tutte le precedenti, anche la tabella con
+        le selezioni dei docenti (“Tutti i docenti”). Scarica sempre un backup
+        per ragioni di sicurezza.<br />
+        </li>
+        <li>Infine con “Scarica backup” si può creare un backup in qualsiasi
+        momento e continuare il lavoro in un altro ambiente di sviluppo.<br />
+        Uno strumento semplice per consultare il database così creato è <a
+        href="https://sqlitebrowser.org/">DB Browser for SQLite</a>. Questo
+        <em>client</em> consente di aprire il database, visualizzare le tabelle,
+        eseguire query, modificare i dati e infine esportarli in csv.</li>
+        </ol>
+        <h3 id="il-menù-ricerca">Il menù Ricerca</h3>
+        <p>Questa pagina consente di cercare ed estrarre dati mediante richieste
+        in linguaggio naturale inserite nell’input denominato
+        <code>Cerca</code>. La ricerca verrà effettuata all’interno dei dati
+        caricati e modificati in questa applicazione, facendo uso di un modello
+        della serie ChatGPT. L’applicazione restituisce una query in linguaggio
+        SQL che verrà eseguita solo se accettata (o modificata) dall’operatore.
+        Il risultato comparirà nella stessa pagina. Eventualmente si potranno
+        scaricare i dati in formato csv.</p>
+        <h3 id="il-menù-promozione">Il menù Promozione</h3>
+        <p>Il menù “promozione” è pensato per gestire i dati relativi ai
+        docenti, alle copie saggio e agli indirizzari.</p>
+        <p><a href="https://almadati.it/router_cerca_docenti">Selezione
+        docenti</a> In questa pagina è possibile estrarre i docenti di tutti gli
+        anni accademici, ciascuno con l’url personale, quando pubblicamente
+        disponibile, esportare i dati in formato csv e procedere a eventuali
+        analisi e modifiche delle anagrafiche.</p>
+        <p><a href="https://almadati.it/gestione_docenti">Gestione docenti</a>
+        In questa pagina si possono modificare o inserire i dati relativi ai
+        docenti, agli indirizzari e alle copie saggio inviate. I records sono
+        editabili e cancellabili. Si può sempre scaricare il risultato del
+        lavoro in formato csv.</p>
+        <p><a href="https://almadati.it/dashboard_docenti">Dashboard docenti</a>
+        Questa pagina riassume i dati relativi ai docenti, alle copie saggio e
+        agli indirizzari. Si possono scaricare i dati in formato csv. Consente
+        di accedere direttamente su Almalibri alle adozioni del docente e alle
+        adozioni di libro adottato.</p>
+        <h2 id="esempi">Esempi</h2>
+        <h3 id="cercare-i-docenti">Cercare i docenti</h3>
+        <ol type="1">
+        <li>Selezionare i docenti da almalibri con l’ssd desiderato (da “Scarica
+        da almalibri”)</li>
+        <li>Nella pagina “Docenti” compariranno i docenti con l’ssd desiderato
+        ma ripetuti se hanno più insegnamenti</li>
+        <li>Se si desidera un file csv con i nomi dei docenti e con la pagina
+        url personale, per le successive ricerche di dati promozionali, conviene
+        andare su “Dashboard” e scaricare il file csv dal pannello docenti</li>
+        <li>In alternativa si può cliccare su “Tutti i docenti” ed effettuare la
+        selezione come indicato nella figuta 2 
+        <img class="mb-3 mt-3 img-fluid shadow"
+        src="https://almalibri-staticfiles.fra1.digitaloceanspaces.com/static/images/selezione_docenti.png"
+        alt="Selezione docenti" width="600"/><p>Figura 2.</p></li>
+        </ol>
+        <h3 id="selezionare-gli-insegnamenti">Selezionare gli insegnamenti</h3>
+        <p>Un elemento utile alla promozione è conoscere quali insegnamenti sono
+        tenuti da un docente. Nella pagina “Insegnamenti” si possono selezionare
+        gli insegnamenti di un docente. Nella “Dashboard” compaiono, e si
+        possono scaricare i corrispondenti file csv, i dati relativi al numero
+        di studenti che potrebbero acquistare il libro adottato, l’elenco delle
+        adozioni di quel docente e dove trovare sul web le informazioni
+        personali del docente.</p>
+        <h3 id="selezionare-i-libri-adottati">Selezionare i libri adottati</h3>
+        <p>Continuando lo stesso esempio, si può selezionare un libro adottato
+        da un docente. Nella pagina “Libri” si seleziona l’ISBN del libro
+        adottato. Nella “Dashboard” compaiono, e si possono scaricare i
+        corrispondenti file csv, i dati relativi al numero di studenti che
+        potrebbero acquistare il libro adottato, l’elenco delle adozioni di quel
+        docente e dove trovare sul web le informazioni personali del
+        docente.</p>
+        <h3 id="elenco-dei-corsi">Elenco dei corsi</h3>
+        <p>Per ottenere l’elenco dei corsi dove è adottato un volume, occorre
+        selezionarlo nella pagina “Libri”. Nella “Dashboard” si troveranno così
+        l’elenco dei docenti che lo adottano, il numero (vedi le considerazioni
+        sulla correttezza di questo dato) di studenti complessivo che potrebbe
+        acquistarlo ogni anno e l’elenco delle adozioni.</p>
+        <h3 id="iniziare-una-nuova-selezione">Iniziare una nuova selezione</h3>
+        <p>Per iniziare una nuova ricerca/selezione, si può cliccare su
+        “Cancella le adozioni selezionate” e ricominciare da capo. Si possono
+        anche cancellare i dati del menù adozioni, oppure cancellare tutti i
+        dati e creare un backup. In alternativa si può proseguire la ricerca
+        conservando i dati già selezionati e aggiungere ad essi nuovi dati sia
+        con “Scarica da almalibri” sia con “Carica file”.</p>
+        <h3 id="individuare-i-docenti-con-nome-e-prof_id">Individuare i docenti
+          con nome e prof_id</h3>
+          <p>Il prof_id è un identificativo che viene assegnato da Almalibri a
+          ciascun docente sulla base del nome e cognome e dell’università. Non è
+          un identificativo univoco. Lo stesso docente può insegnare in più
+          università e avere più prof_id. Se un docente nel corso degli anni
+          cambia università, il prof_id cambierà. Per questo motivo
+          l’individuazione dei docenti e dei corsi è sempre basata su un insieme
+          di dati.<br />
+          L’unico momento in cui si fa uso del prof_id come identificativo univoco
+          è quando viene caricato, nel menu “promozione”, un file con i dati
+          “personali” dei docenti a cui si sono inviati saggi. In questo caso
+          l’identità dei docenti sarà stata probabilmente controllata
+          dall’utente.</p>
+</div>        
+
+
+      {% endblock %}
+ 

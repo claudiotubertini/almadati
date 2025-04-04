@@ -1,0 +1,42 @@
+
+
+      {% if items|length == 0 %}
+      <div id="tuttidocenti"  class="table-responsive small" style="visibility: hidden;">
+
+      {% else %}
+      <div id="tuttidocenti"  class="table-responsive small" style="visibility: visible;">
+        <h6>selezionati</h6>
+        <table class="table table-striped table-sm">
+          <thead>
+            <tr>
+                <th scope="col">Università</th>
+                <th scope="col">prof_id</th>
+                <th scope="col">Nome</th>
+                <th scope="col">insegnamento_id</th>
+                <th scope="col">url personale</th>
+                <th scope="col">ssd</th>
+            </tr>
+          </thead>
+          
+          <tbody>
+            {% for item in items %}
+              {% if loop.index <= 5 %}
+              <tr>
+                <td>{{ item.uni_cod }}</td>
+                <td>{{ item.prof_id }}</td>
+                <td>{{ item.prof_nome }}</td>
+                <td>{{ item.insegnamento_id }} </td>
+                <td> {{ item.insegnamento_prof_www}}</td>
+                <td> {{ item.materia_ssd_cod}}</td>
+            </tr>
+              {% endif %}
+          {% endfor %}
+           
+          </tbody>
+        </table>
+      </div>
+      
+ {% endif %}
+ 
+ 
+

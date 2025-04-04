@@ -1,0 +1,84 @@
+{% if results|length == 0 and message_tpl=='' %}
+<div id=""  class="table-responsive small" style="visibility: hidden;">
+
+  {% elif message_tpl and results|length == 0 %}
+  <div id=""  class="table-responsive text-center" style="visibility: visible;">
+  <h5>{{ message_tpl }}</h5>
+  </div>
+{% elif  results|length > 0 %}
+<div class="row">
+<table class="table small" style="visibility:visible">
+<thead>
+<tr>
+<th>uni_cod</th>
+<th>a_a</th>
+<th>facolta</th>
+<th>laurea_nome</th>
+<th>laurea_tipo</th>
+<th>sede</th>
+<th>laurea_classe_cod</th>
+<th>curr_nome</th>
+<th>materia_nome</th>
+ <th>materia_ssd_cod</th>
+   <th>materia_cfu</th>
+     <th>curr_materia_anno</th>
+       <th>curr_materia_periodo</th>
+         <th>insegnamento_prof</th>
+           <th>insegnamento_prof_www</th>
+             <th>isbn</th>
+               <th>autori</th>
+                 <th>curatori</th>
+                   <th>titolo</th>
+                     <th>editore</th>
+                       <th>testo_obb</th>
+                         <th>testo_uso</th>
+                           <th>testo_freq</th>
+                             <th>laurea_iscritti</th>
+                               <th>laurea_matricole</th>
+                                 <th>prof_id</th>
+                                   <th>insegnamento_id</th>
+</tr>
+</thead>
+<tbody id="adozioni_pages">
+{% for item in results %}
+{% if loop.index <= 20 %}
+<tr>
+ <td>{{ item.uni_cod }}</td>
+ <td>{{ item.a_a }}</td>
+ <td>{{ item.facolta }}</td>
+ <td>{{ item.laurea_nome }}</td>
+ <td>{{ item.laurea_tipo }}</td>
+ <td>{{ item.sede }}</td>
+ <td>{{ item.laurea_classe_cod }}</td>
+ <td>{{ item.curr_nome }}</td>
+ <td>{{ item.materia_nome }}</td>
+ <td>{{ item.materia_ssd_cod }}</td>
+ <td>{{ item.materia_cfu }}</td>
+ <td>{{ item.curr_materia_anno }}</td>
+ <td>{{ item.curr_materia_periodo }}</td>
+ <td>{{ item.insegnamento_prof }}</td>
+ <td>{{ item.insegnamento_prof_www }}</td>
+ <td>{{ item.isbn }}</td>
+ <td>{{ item.autori }}</td>
+ <td>{{ item.curatori }}</td>
+ <td>{{ item.titolo }}</td>
+ <td>{{ item.editore }}</td>
+ <td>{{ item.testo_obb }}</td>
+ <td>{{ item.testo_uso }}</td>
+ <td>{{ item.testo_freq }}</td>
+ <td>{{ item.laurea_iscritti }}</td>
+ <td>{{ item.laurea_matricole }}</td>
+ <td>{{ item.prof_id }}</td>
+ <td>{{ item.insegnamento_id }}</td>
+</tr>
+{% endif %}
+{% endfor %}
+</tbody>
+</table>
+
+ <p>Questa tabella mostra al massimo le prime 20 righe. Eventualmente scaricare l'intero file csv.</p>
+<form method="get" action="/csv_cerca_adozioni">
+    <button type="submit" class="btn btn-primary" style="font-size:x-small;">Scarica tutti i records</button>
+ </form>
+</div>
+{% endif %}

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" /> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2024-03-29T00:00" />
+    <meta property="og:image" content="https://almalibri-staticfiles.fra1.digitaloceanspaces.com/static/images/civetta_di_minerva_sm.jpg" />
+    <meta property="og:title" content='Come usare i dati di Almalibri' />
+    <meta property="og:description" content="Editoria universitaria, esempi come utilizzare Almalibri" />
+    <meta property="og:site_name" content="Tutta l'Università italiana, i curricula, i testi" />
+    <link rel="icon" type="image/x-icon" href="https://almalibri-staticfiles.fra1.digitaloceanspaces.com/static/images/flask-gear_white.ico"/> 
+  
+    <meta name="description" content="Editoria universitaria, esempi come utilizzare Almalibri">
+    <meta name="keywords" content="Come usare i dati di almalibri">
+    <meta name="htmx-config" content='{"useTemplateFragments":"false"}'>
+    <link href="https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap" rel="stylesheet">
+    <link href="https://almalibri-staticfiles.fra1.digitaloceanspaces.com/static/css/navbar.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-table@1.23.0/dist/bootstrap-table.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/easymde/dist/easymde.min.css">
+      
+    {% block style %}
+    
+    {% endblock %}
+    
+            {% block head %}
+            
+            <title>{% block title %}AlmaDati{% endblock %}</title>
+            {% endblock %}
+</head>
+
+<body>
+  <script>0</script>
+    {% block top_nav_wrapper %}
+  
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Almalibri Web">
+    <div class="container">
+      <a class="navbar-brand  bg-dark" href="/">AlmaDati <i>Beta</i></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#guidadalmalibri07"
+      aria-controls="guidadalmalibri07" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-md-center">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item text-end">
+            <a class="nav-link active" aria-current="page" href="/">Adozioni</a>
+          </li>
+          <li class="nav-item text-end">
+            <a class="nav-link active" aria-current="page" href="/search">Ricerca</a>
+          </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Promozione
+              </a>
+              <ul class="dropdown-menu">
+                  <li>  <a class="dropdown-item" aria-current="page" href="/router_cerca_docenti">Docenti</a>
+                  </li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="/admin">Utenti</a></li>
+                  <li><a class="dropdown-item" href="/base">Aggiornamento docenti</a></li>
+                  </ul>
+            </li>
+                 
+  
+          <li class="nav-item text-end">
+            <a class="nav-link active" aria-current="page" href="/documentazione">Documentazione</a>
+          </li>
+         
+          </ul>
+          <ul class="nav">
+            <li class="nav-item text-end">
+              <a class="nav-link" aria-current="page" href="https://www.almalibri.it/contatti/">Contatti</a>
+            </li>
+           
+            <li class="nav-item text-end">
+              <a class="nav-link" aria-current="page" href="https://esempi.almalibri.it/abbonamenti" target="_blank">Abbonamenti</a>
+            </li>
+          <li class="nav-item active ">
+           &nbsp;&nbsp;
+            </li>
+           <li class="nav-item nav-pills text-end">
+            <a class="nav-link active" aria-current="page" href="https://almalibri.it" target="_blank">Vai ad Almalibri</a>
+          </li>
+        </ul>
+      
+      </div>
+    </div>
+  </nav>
+  
+    {% endblock %}
+    {% block sidebar %}
+    {% if user %}
+    <div class="container-fluid mt-0">
+      <div class="row">
+        <div class="sidebar border border-right col-md-3 col-lg-2 p-0 bg-body-tertiary">
+           
+            <div class="offcanvas-body d-md-flex flex-column p-0 pt-lg-3 overflow-y-auto">
+              <ul class="nav flex-column">
+
+                <li class="nav-item">
+                  <a class="nav-link d-flex align-items-center gap-2" href="/">
+                    
+                    <i class="bi bi-house h5" data-toggle="tooltip" data-placement="right" title="Dashboard"></i>
+                    Dashboard
+                  </a>
+                  
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link d-flex align-items-center gap-2" href="/insegnamenti">
+                    <i class="bi bi-journals h5" data-toggle="tooltip" data-placement="right" title="Insegnamenti"></i>
+                    Insegnamenti
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link d-flex align-items-center gap-2" href="/nuove_adozioni">
+                    <i class="bi bi-journal-bookmark h5" data-toggle="tooltip" data-placement="right" title="Nuove adozioni"></i>
+                    Nuove adozioni
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link d-flex align-items-center gap-2" href="/adozioni">
+                    <i class="bi bi-tags h5" data-toggle="tooltip" data-placement="right" title="SSD"></i>
+                    SSD
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link d-flex align-items-center gap-2" href="/docenti">
+                    <i class="bi bi-people h5" data-toggle="tooltip" data-placement="right" title="Docenti"></i>
+                    Docenti
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link d-flex align-items-center gap-2" href="/libri">
+                    <i class="bi bi-book h5" data-toggle="tooltip" data-placement="right" title="Libri"></i>
+                    Libri
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link d-flex align-items-center gap-2" href="/universita" >
+                    <i class="bi bi-bank h5" data-toggle="tooltip" data-placement="right" title="Università"></i>
+                    Università
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link d-flex align-items-center gap-2" href="/form">
+                    <i class="bi bi-database h5" data-toggle="tooltip" data-placement="right" title="Almalibri"></i>
+                    Almalibri
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link d-flex align-items-center gap-2" href="/uploadfile">
+                    <i class="bi bi-filetype-csv h5" data-toggle="tooltip" data-placement="right" title="Carica file"></i>
+                    Carica file
+                  </a>
+                </li>
+               
+              </ul>
+    
+              
+    
+              <hr class="border border-primary border-3 opacity-75">
+             
+              <ul class="nav flex-column mb-auto">
+                <li class="nav-item" style="border-bottom:1px solid rgb(17, 112, 253);">
+                  <a id="settings01" class="nav-link d-flex align-items-center gap-2" href=""
+                  hx-get="/settings"
+                  hx-target="this"
+                  hx-swap="innerHTML" >
+                  <i class="bi bi-journal-x h5"></i>
+                    Cancella le adozioni selezionate e i messaggi.
+                  </a>               
+                </li>
+               
+                <li class="nav-item" style="border-bottom:1px solid rgb(17, 112, 253);">
+                  <a id="settings02" class="nav-link d-flex align-items-center gap-2" href=""
+                  hx-get="/settings/delete"
+                  hx-target="this"
+                  hx-swap="innerHTML">
+                  <i class="bi bi-trash2 h5"></i>
+                    Cancella le adozioni caricate, le adozioni selezionate, i messaggi.
+                  </a>               
+                </li>
+                <li class="nav-item" style="border-bottom:1px solid rgb(17, 112, 253);">
+                  <a id="" class="nav-link d-flex align-items-center gap-2" href="/settings/deleteall">
+                  <i class="bi bi-trash h5"></i>
+                  Cancella i docenti selezionati, le adozioni caricate, 
+                  le adozioni selezionate, i messaggi e crea backup.
+                  </a>               
+                </li>
+                <li class="nav-item" style="border-bottom:1px solid rgb(17, 112, 253);">
+                  <a id="" class="nav-link d-flex align-items-center gap-2" href="/scarica_backup">
+                  <i class="bi bi-database-down h5"></i>
+                    Scarica backup
+                  </a>               
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link d-flex align-items-center gap-2" href="/login">
+                    <i class="bi bi-door-open h5"></i>
+                    Login <br>
+                  </a>
+                  <div class="card" style="width: 16rem;">
+                    <div class="card-body">
+                      {% if user %} Utente collegato: {{ user.username }}
+                  {% else %} Utente non collegato
+                  {% endif %}
+                  </div>
+                  </div>
+                  
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link d-flex align-items-center gap-2" href="/logout">
+                    <i class="bi bi-door-closed h5"></i>
+                    Logout
+                  </a>
+                </li>
+                <hr class="border border-primary border-3 opacity-75">
+                <li class="nav-item">
+              
+               <!-- Collapsible card for messages -->
+          <div class="card text-bg-light mb-3" style="max-width: 16rem;">
+            <div class="card-header">
+              <h5>Selezioni effettuate</h5>
+              <button class="btn btn-outline-primary" type="button" data-bs-toggle="collapse" 
+              data-bs-target="#messageCollapse" aria-expanded="false" aria-controls="messageCollapse">
+                Mostra/Nascondi
+              </button>
+            </div>
+            <div id="messageCollapse" class="collapse">
+              <div class="card-body">
+                <p class="card-text" hx-ext="sse" sse-connect="/stream" sse-swap="message">
+                  <!-- Messages will be displayed here -->
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- End of collapsible card for messages -->
+              </li>
+                
+              </ul>
+            </div>
+            {% endif %}
+            {% endblock %}
+        </div>
+        <main class="col-md-9 col-lg-9">
+        {% block content %}{% endblock %}
+        </main>
+      </div>
+    </div>
+  
+
+    <hr>
+
+<footer>
+    {% block footer %}
+    <div class="row justify-content-center">
+      <div class="col-auto">
+      <table class="table table-borderless">
+        <tr style="vertical-align:middle;">
+          <td class=""><p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/">
+            <span property="dct:title">AlmaDati</span> by <span property="cc:attributionName">AlmaLibri srls</span>
+             is marked with <a href="https://creativecommons.org/publicdomain/zero/1.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC0 1.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/zero.svg?ref=chooser-v1" alt=""></a></p></td></tr>
+       
+        </table>
+    </div></div>
+        {% endblock %}
+    
+</footer>
+{% block script %}
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-table@1.23.0/dist/bootstrap-table.min.js"></script>
+<script src="https://unpkg.com/htmx.org@2.0.0" integrity="sha384-wS5l5IKJBvK6sPTKa2WZ1js3d947pvWXbPJ1OmWfEuxLgeHcEbjUUA5i9V5ZkpCw" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/htmx-ext-sse@2.0.0/sse.js"></script>
+<script src="https://unpkg.com/hyperscript.org@0.9.12"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-table@1.22.6/dist/locale/bootstrap-table-it-IT.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://unpkg.com/htmx-ext-response-targets@2.0.0/response-targets.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/easymde/dist/easymde.min.js"></script>
+{% endblock %}
+</body>
+</html>

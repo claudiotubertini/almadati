@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block content %}
+<div hx-ext="response-targets">
+<div class="container mt-5 text-center">
+  <h3 class="text-center">
+    Carica il file csv con i docenti aggiornati</h3>
+    <i class="bi bi-file-earmark-arrow-up-fill h2"></i>
+    
+      <div class="card mt-3 text-start" style="width:50%; margin: 0 auto; float: none;">
+        <div class="card-body ">
+          <h5 class="card-title">Prima di effettuare il caricamento</h5>
+          <p class="card-text text-start">Scaricare il file aggiornato disponibile
+            nella pagina <a href="https://claudiotubertini.github.io/almadati/" target="_blank">github di  AlmaDati</a>.</p>
+        </div>
+        
+      <div class="form-group">
+
+        <form 
+        id="form"
+        hx-encoding="multipart/form-data"
+        hx-post="/configfile"
+        hx-target="#config_dati"
+        hx-indicator=".htmx-indicator"
+        hx-target-error="#any-errors"
+        hx-trigger="submit"
+        >
+      <div class="form-group text-center">
+        <div>
+          
+          <div class="input-group mb-3">
+        <input class="form-control w-50" type="file" name="file" id="fileadozioni">
+        
+          <span class="input-group-text" id="basic-addon1">Separatore</span>
+          
+        <select id="Separatore" name="Separatore" class="form-select form-select-sm" required>
+              <option selected></option>
+              <option value=",">,</option>
+              <option value=";">;</option>
+        </select>
+        <div class="invalid-feedback">
+          Inserire un separatore valido
+        </div>
+       </div>
+      </div>
+      </div>
+      <button class="w-100 btn btn-lg btn-primary mt-3" type="submit" id="myBtn">Carica il file</button> 
+            </form>
+      </div>
+
+    </div>
+    <p class="htmx-indicator">
+      <img src="/static/img/bars.svg" width="30"/> attendere prego...
+    </p>
+    
+<div id="any-errors" class="alert h6 mt-3" role="alert"></div>
+<div id="config_dati" class="">
+{% include 'partial_config.html' %}
+</div>
+</div>
+</div>
+{% endblock %}
