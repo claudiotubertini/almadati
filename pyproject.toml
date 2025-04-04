@@ -1,5 +1,5 @@
 [project]
-name = "AlmaDati_GUI"
+name = "almadati"
 version = "0.1.0"
 description = "Gestire i dati delle adozioni con quelli di AlmaLibri, integrati in un'unica applicazione "
 readme = "README.md"
@@ -18,3 +18,6 @@ dependencies = [
     "psycopg[binary]>=3.2.5",
     "bcrypt>=4.2.1",
 ]
+
+[project.urls]
+Repository = "https://github.com/claudiotubertini/almadati"
