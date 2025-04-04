@@ -4,6 +4,7 @@ read_from_fastapi_to_flet.md
 *.log
 *.pyc
 __pycache__/
+README.md
 *.sqlite3
 *.pyo
 *.db
