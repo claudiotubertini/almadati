@@ -1,7 +1,7 @@
 [project]
-name = "fastapi-docker-3"
+name = "AlmaDati_GUI"
 version = "0.1.0"
-description = "Add your description here"
+description = "Gestire i dati delle adozioni con quelli di AlmaLibri, integrati in un'unica applicazione "
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
