@@ -5,9 +5,14 @@
 AlmaDati è un'applicazione web per la gestione delle adozioni universitarie. È un'applicazione open source, scritta in Python, che utilizza FastAPI e SQLite. È possibile installarla in locale o su un server remoto. Per installare AlmaDati, è necessario avere Python 3.8 o superiore e pip installato.
 
 ``` bash
-pip install almadati --index-url https://github.com/claudiotubertini/almadati.git   
-
+git init
+git clone https://github.com/claudiotubertini/almadati.git   
 ```  
+
+``` bash
+cd almadati
+uv sync
+```
 
 ## Guida all'installazione
 
