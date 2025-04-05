@@ -1,5 +1,5 @@
 from pathlib import Path
-import almadati.auth as auth
+import app.auth as auth
 import sqlite3
 import hashlib, os
 import pandas as pd

@@ -7,7 +7,7 @@ import pandas as pd
 import numpy as np
 import sqlite3, aiosqlite
 from typing import Dict, List, Optional, Union, Text, Tuple, Literal
-from almadati.threading_io import Alma_api
+from app.threading_io import Alma_api
 from pathlib import Path
 
 p = Path(__file__).parent.resolve()

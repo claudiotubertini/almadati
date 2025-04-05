@@ -21,7 +21,7 @@ import pandas as pd
 import numpy as np
 import itertools
 from datetime import datetime, timedelta, timezone
-import almadati.auth as auth
+import app.auth as auth
 import aiosqlite, sqlite3
 import httpx
 #import aiofiles
@@ -30,16 +30,16 @@ import json, re, os, sys
 from io import BytesIO, StringIO
 from fastapi.middleware.wsgi import WSGIMiddleware
 from pathlib import Path
-import almadati.myalma as myalma
-import almadati.myadmin as myadmin
+import app.myalma as myalma
+import app.myadmin as myadmin
 from pydantic import BaseModel, EmailStr
 from pydantic.dataclasses import dataclass
 import hashlib
 import datetime as dt
 import logging
 import logging.handlers
-import almadati.mylangchain as mylangchain
-from almadati.paginator.paginator import Paginator
+import app.mylangchain as mylangchain
+from app.paginator.paginator import Paginator
 
 
 handler = logging.handlers.RotatingFileHandler("logFile.log", maxBytes=10000)
