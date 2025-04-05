@@ -23,6 +23,4 @@ dependencies = [
 Homepage = "https://github.com/claudiotubertini/almadati"
 Documentation = "https://github.com/claudiotubertini/almadati#readme"
 
-[build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
+
